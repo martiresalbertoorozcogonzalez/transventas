@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','InicioController')->name('inicio');
 
 Auth::routes(['verify' => true]);
 
@@ -25,6 +23,7 @@ Auth::routes(['verify' => true]);
 Route::group(['middleware' => ['auth','verified']], function() {
 
   Route::get('/publicacion/create', 'PublicacionController@create')->name('publicaciones.create');
+  Route::post('/publicacion', 'PublicacionController@store')->name('publicaciones.store');
   Route::get('/publicacion/edit', 'PublicacionController@edit')->name('publicaciones.edit');
 
   //Subir varias imagenes
