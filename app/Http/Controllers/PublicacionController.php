@@ -43,7 +43,7 @@ class PublicacionController extends Controller
         $data = $request->validate([
            'titulo' => 'required',
            'imagen_principal' => 'required|image|max:1000',
-           'category_id' => 'required|exists:App\Categoria,id',
+           'categoria_id' => 'required|exists:App\Categoria,id',
            'ubicacion_id' => 'required|exists:App\Ubicacion,id',
            'condicion_id' => 'required|exists:App\Condicion,id',
            'modelo_id' => 'required|exists:App\Modelo,id',

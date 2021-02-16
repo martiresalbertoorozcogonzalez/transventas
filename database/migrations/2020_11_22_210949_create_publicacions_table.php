@@ -42,16 +42,6 @@ class CreatePublicacionsTable extends Migration
         Schema::create('publicacions', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('user_id')->unsigned();
-
-            $table->bigInteger('category_id')->unsigned();
-
-            $table->bigInteger('ubicacion_id')->unsigned();
-
-            $table->bigInteger('condicion_id')->unsigned();
-
-            $table->bigInteger('modelo_id')->unsigned();
-
             $table->string('titulo', 100);
             $table->double('precio');
             $table->string('millaje');
@@ -62,25 +52,15 @@ class CreatePublicacionsTable extends Migration
             $table->time('cierre');
             $table->uuid('uuid');
 
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained();
 
-            $table->foreign('category_id')->references('id')->on('categorias')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreignId('categoria_id')->constrained();
 
-            $table->foreign('ubicacion_id')->references('id')->on('ubicacions')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreignId('ubicacion_id')->constrained();
 
-            $table->foreign('condicion_id')->references('id')->on('condicions')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreignId('condicion_id')->constrained();
 
-            $table->foreign('modelo_id')->references('id')->on('modelos')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreignId('modelo_id')->constrained();
 
             $table->timestamps();
         });
@@ -97,6 +77,7 @@ class CreatePublicacionsTable extends Migration
         Schema::dropIfExists('categorias');
         Schema::dropIfExists('ubicacions');
         Schema::dropIfExists('condicions');
+        Schema::dropIfExists('modelos');
         Schema::dropIfExists('publicacions');
     }
 }

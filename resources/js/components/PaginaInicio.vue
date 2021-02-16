@@ -1,5 +1,15 @@
 <template>
     <div>
-        <h2>Desde compnente inicio</h2>
+        <router-view></router-view>
     </div>
 </template>
+
+<script>
+
+import store from '../store'
+
+export default {
+store
+}
+</script>
+

@@ -9,7 +9,7 @@ class Publicacion extends Model
     protected $fillable = [
        'titulo',
        'imagen_pricipal',
-       'category_id',
+       'categoria_id',
        'ubicacion_id',
        'modelo_id',
        'condicion_id',
@@ -21,4 +21,12 @@ class Publicacion extends Model
        'cierre',
        'uuid'
     ];
+
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+
+
 }

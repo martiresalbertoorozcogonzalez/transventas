@@ -97,10 +97,10 @@
 
                         <div class="col-md-6">
 
-                            <label for="category_id">Categoria del Vehiculo</label>
+                            <label for="categoria_id">Categoria del Vehiculo</label>
 
-                            <select class="form-control @error('category_id') is-invalid @enderror" name="category_id"
-                                id="category_id">
+                            <select class="form-control @error('categoria_id') is-invalid @enderror" name="categoria_id"
+                                id="categoria_id">
                                 <option value="" selected disabled>-- Seleccione --</option>
 
                                 @foreach ($categorias as $categoria)

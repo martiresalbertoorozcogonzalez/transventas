@@ -16,42 +16,42 @@ class CategoriaSeeder extends Seeder
 
         DB::table('categorias')->insert([
             'nombre' => 'Cabezal',
-            'slug' => 'Cabezal',
+            'slug' => 'cabezal',
              'created_at' => Carbon::now(),
              'updated_at' => Carbon::now(),
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Camion',
-            'slug' => 'Camion',
+            'slug' => 'camion',
              'created_at' => Carbon::now(),
              'updated_at' => Carbon::now(),
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Furgon',
-            'slug' => 'Furgon',
+            'slug' => 'furgon',
              'created_at' => Carbon::now(),
              'updated_at' => Carbon::now(),
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Carro',
-            'slug' => 'Carro',
+            'slug' => 'carro',
              'created_at' => Carbon::now(),
              'updated_at' => Carbon::now(),
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Pickup',
-            'slug' => 'Pickup',
+            'slug' => 'pickup',
              'created_at' => Carbon::now(),
              'updated_at' => Carbon::now(),
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Moto',
-            'slug' => 'Moto',
+            'slug' => 'moto',
              'created_at' => Carbon::now(),
              'updated_at' => Carbon::now(),
         ]);
